@@ -1,15 +1,15 @@
 let USER_ID;
 let USER_SECRET;
 
-if(typeof config !== "undefined") {
+if(window.hasOwnProperty(config) === true || window.hasOwnProperty(config) === false) {
     USER_ID = config.USER_ID;
     USER_SECRET = config.USER_SECRET;
-}else{
+}else {
     USER_ID ='';
     USER_SECRET='';
 }
 
-console.log("Testing" + USER_ID);
+console.log("testing " + window.hasOwnProperty(config));
 
 // ES6 Classes
 class Github {
