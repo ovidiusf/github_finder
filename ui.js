@@ -37,7 +37,39 @@ class UI {
         `;
     }
 
+    // clears the profile
     clearProfile(){
         this.profile.innerHTML = '';
+    }
+
+    // clear the alert message
+    clearAlert(){
+        const currentAlert = document.querySelector('.alert');
+
+        if(currentAlert){
+            currentAlert.remove();
+        }else {
+
+        }
+    }
+
+    // show alert if the user was not found
+    showAlert(message, className){
+        // clear any alerts that remain from previous searches
+        this.clearAlert();
+        const div = document.createElement('div');
+        div.className = className;
+        div.appendChild(document.createTextNode(message));
+        // get the parent
+        const container = document.querySelector('.searchContainer');
+        // get search box
+        const search = document.querySelector('.search');
+        // insert the alert
+        container.insertBefore(div, search);
+
+        // Timeout after 3 sec
+        setTimeout(()=>{
+            this.clearAlert();
+        }, 3000);
     }
 }
