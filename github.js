@@ -1,8 +1,7 @@
 let USER_ID;
 let USER_SECRET;
-
+console.log(typeof config != "undefined");
 if (typeof config != "undefined") {
-    alert("GOT THERE");
     USER_ID = config.USER_ID;
     USER_SECRET = config.USER_SECRET;
 } else {
