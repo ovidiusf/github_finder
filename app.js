@@ -7,14 +7,20 @@ const searchUser = document.getElementById('searchUser');
 // Search the input event listener
 searchUser.addEventListener('keyup', (e) => {
 
+    // get the input
     const userText = e.target.value;
 
     if (userText !== '') {
         // http call
-        console.log(userText);
         github.getUser(userText)
             .then(data => {
-                console.log(data);
+                if(data.profile.message === "Not Found"){
+                    //Alert that user was not found
+                }else {
+                    //show profile
+                }
             })
+    } else {
+        // clear the profile
     }
 });
