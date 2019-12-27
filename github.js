@@ -1,5 +1,14 @@
-const USER_ID = config.USER_ID;
-const USER_SECRET = config.USER_SECRET;
+let USER_ID;
+let USER_SECRET;
+
+if(typeof config !== "undefined") {
+    USER_ID = config.USER_ID;
+    USER_SECRET = config.USER_SECRET;
+}else{
+    USER_ID ='';
+    USER_SECRET='';
+}
+
 console.log("Testing" + USER_ID);
 
 // ES6 Classes
