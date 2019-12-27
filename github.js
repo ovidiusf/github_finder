@@ -1,5 +1,6 @@
 const USER_ID = config.USER_ID;
 const USER_SECRET = config.USER_SECRET;
+console.log("Testing" + USER_ID);
 
 // ES6 Classes
 class Github {
